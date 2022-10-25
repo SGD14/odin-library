@@ -28,7 +28,26 @@ body {
     padding: 10px;
 }
 
-.book-list {
+.book-list-section {
     flex: 1;
     background-color: rgb(230, 230, 230);
+}
+
+#book-table {
+    width: 100%;
+    border-collapse: collapse;
+}
+
+#book-table th {
+    text-align: center;
+}
+
+#book-table td {
+    text-align: center;
+    padding: 0;
+    border: 0;
+}
+
+#book-table tr:nth-child(odd) {
+    background-color:white;
 }
