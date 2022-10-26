@@ -55,6 +55,10 @@ body {
     background-color:white;
 }
 
+#book-table .book-delete-button {
+    width: 3rem;
+}
+
 #new-book-form {
     z-index: 5;
     height: 100vh;

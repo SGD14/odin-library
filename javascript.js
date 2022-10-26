@@ -14,26 +14,39 @@ function Book(title, author, pages, read) {
 function rebuildBookTable() {
     let bookTable = document.querySelector("#book-table");
 
-    bookTable.childNodes.forEach(child => bookTable.removeChild(child));
+    while(bookTable.childElementCount > 1)
+        bookTable.removeChild(bookTable.lastChild);
 
     if(booksLibrary.length > 0) {
-        booksLibrary.forEach(book => {
+        booksLibrary.forEach((book, index) => {
             let tableRow = document.createElement("tr");
 
             let titleColumn = document.createElement("td");
             let authorColumn = document.createElement("td");
             let pagesColumn = document.createElement("td");
             let readColumn = document.createElement("td");
+            let deleteColumn = document.createElement("td");
 
             titleColumn.textContent = book.title;
             authorColumn.textContent = book.author;
             pagesColumn.textContent = book.pages;
             readColumn.textContent = book.read ? "Yes" : "No";
+           
+            let deleteButton = document.createElement("button");
+            deleteButton.textContent = "X";
+            deleteButton.classList.add("book-delete-button");
+            deleteButton.addEventListener('click', event => {
+                booksLibrary.splice(index, 1);
+                rebuildBookTable();
+            });
+
+            deleteColumn.appendChild(deleteButton);
 
             tableRow.appendChild(titleColumn);
             tableRow.appendChild(authorColumn);
             tableRow.appendChild(pagesColumn);
             tableRow.appendChild(readColumn);
+            tableRow.appendChild(deleteColumn);
 
             bookTable.appendChild(tableRow);
         });
