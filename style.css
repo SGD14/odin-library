@@ -54,3 +54,65 @@ body {
 #book-table tr:nth-child(odd) {
     background-color:white;
 }
+
+#new-book-form {
+    z-index: 5;
+    height: 100vh;
+    width: 100vw;
+    position: fixed;
+    background-color:rgba(0, 0, 0, 0.75);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#new-book-form > .form-modal {
+    background-color: white;
+    border: 2px solid black;
+    box-shadow: 0px 0px 25px black;
+    border-radius: 20px;
+    padding: 30px;
+    padding-top: 20px;
+    position: relative;
+}
+
+#new-book-form > .form-modal > #close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    border-radius: 50%;
+    background-color: transparent;
+    border: 0px solid rgb(230, 230, 230);
+    height: 2rem;
+    width: 2rem;
+    font-weight: bold;
+}
+
+#new-book-form > .form-modal > form {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+#new-book-form > .form-modal > form > h2 {
+    margin: 0;
+}
+
+#new-book-form > .form-modal > form > label {
+    margin-top: 1rem;
+    font-weight: bold;
+}
+
+#new-book-form > .form-modal > form > div {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+}
+
+#new-book-form > .form-modal > form > button {
+    margin-top: 2rem;
+    width: 100%;
+    font-weight: bold;
+}
