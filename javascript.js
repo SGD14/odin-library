@@ -53,6 +53,16 @@ function rebuildBookTable() {
     }
 }
 
+function resetAddBookForm() {
+    document.querySelectorAll("#new-book-form > .form-modal > form input").forEach(element => {
+        if(element.type === "radio") {
+            element.checked = false;
+        } else {
+            element.value = "";
+        }
+    });
+}
+
 let book1 = new Book("Dummy Book 1", "Dummy Author", 203, true);
 let book2 = new Book("Dummy Book 2", "Dummy Author", 386, false)
 
@@ -62,8 +72,11 @@ rebuildBookTable();
 
 document.querySelector("#add-new-book-button").addEventListener('click', event => {
     document.querySelector('#new-book-form').style.display = "flex";
+    resetAddBookForm();
 });
 
 document.querySelector("#close-modal-button").addEventListener('click', event => {
     document.querySelector('#new-book-form').style.display = "none";
+    resetAddBookForm();
 });
+

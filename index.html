@@ -30,14 +30,14 @@
             <form action="">
                 <h2>Add New Book</h2>
                 <label>Title</label>
-                <input type="text" name="title">
+                <input type="text" name="title" required>
                 <label>Author</label>
-                <input type="text" name="author">
+                <input type="text" name="author" required>
                 <label>Pages</label>
-                <input type="text" name="pages">
+                <input type="number" name="pages" required>
                 <label>Read</label>
                 <div>
-                    <span><input type="radio" name="read" value="Yes">Yes</span><span><input type="radio" name="read" value="No">No</span>
+                    <span><input type="radio" name="read" value="Yes" required>Yes</span><span><input type="radio" name="read" value="No">No</span>
                 </div>
                 <button type="submit" id="form-add-new-book-button">Add New Book</button>
             </form>
