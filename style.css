@@ -61,7 +61,7 @@ body {
     width: 100vw;
     position: fixed;
     background-color:rgba(0, 0, 0, 0.75);
-    display: flex;
+    display: none;
     flex-direction: column;
     justify-content: center;
     align-items: center;
@@ -77,7 +77,7 @@ body {
     position: relative;
 }
 
-#new-book-form > .form-modal > #close-button {
+#new-book-form > .form-modal > #close-modal-button {
     position: absolute;
     top: 5px;
     right: 5px;

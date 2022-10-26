@@ -40,3 +40,11 @@ if(booksLibrary.length > 0) {
         bookTable.appendChild(tableRow);
     });
 }
+
+document.querySelector("#add-new-book-button").addEventListener('click', event => {
+    document.querySelector('#new-book-form').style.display = "flex";
+});
+
+document.querySelector("#close-modal-button").addEventListener('click', event => {
+    document.querySelector('#new-book-form').style.display = "none";
+});
