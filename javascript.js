@@ -80,3 +80,19 @@ document.querySelector("#close-modal-button").addEventListener('click', event =>
     resetAddBookForm();
 });
 
+document.querySelector("#form-add-new-book-button").addEventListener('click', event => {
+    event.preventDefault();
+
+    let newBookTitle = document.querySelector("#new-book-title").value;
+    let newBookAuthor = document.querySelector("#new-book-author").value;
+    let newBookPages = document.querySelector("#new-book-pages").value;
+    let newBookRead = document.querySelector("input[type=\"radio\"]:checked").value === "Yes" ? true : false;
+
+    let newBook = new Book(newBookTitle, newBookAuthor, newBookPages, newBookRead);
+
+    booksLibrary.push(newBook);
+
+    document.querySelector('#new-book-form').style.display = "none";
+    resetAddBookForm();
+    rebuildBookTable();
+})
